@@ -1,0 +1,1240 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dra. Johanna Joselyn Vázquez Hernández | Odontopediatría, Ortopedia Dental y Pacientes Especiales en Tuxtla Gutiérrez, Chiapas</title>
+  <meta name="description" content="Clínica dental especializada en implantes, ortodoncia invisible y estética dental en Tuxtla Gutiérrez, Chiapas. Valoración inicial con diagnóstico incluido. Reserva online ahora." />
+  <meta property="og:title" content="Dra. Johanna Joselyn Vázquez Hernández | Odontopediatría, Ortopedia Dental y Pacientes Especiales en Tuxtla Gutiérrez, Chiapas" />
+  <meta property="og:description" content="Tu plan de tratamiento, claro desde el primer día. Valoración incluida, financiación a medida." />
+  <meta property="og:type" content="website" />
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            ivory:   '#FAFAF7',
+            stone:   '#F0EDE8',
+            warm:    '#E8E2D9',
+            teal:    '#0D9488',
+            tealDark:'#0F766E',
+            emerald: '#059669',
+            charcoal:'#1C1917',
+            muted:   '#6B6560',
+            gold:    '#B8975A',
+          },
+          fontFamily: {
+            serif: ['"DM Serif Display"', 'Georgia', 'serif'],
+            sans:  ['Inter', 'system-ui', 'sans-serif'],
+          },
+        }
+      }
+    }
+  </script>
+
+  <style>
+    /* ── Base ─────────────────────────────────────── */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Inter', sans-serif; background: #FAFAF7; color: #1C1917; -webkit-font-smoothing: antialiased; }
+
+    /* ── Reveal animations ────────────────────────── */
+    .reveal { opacity: 0; transform: translateY(24px); transition: opacity 0.6s ease, transform 0.6s ease; }
+    .reveal.visible { opacity: 1; transform: none; }
+    .reveal-delay-1 { transition-delay: 0.1s; }
+    .reveal-delay-2 { transition-delay: 0.2s; }
+    .reveal-delay-3 { transition-delay: 0.3s; }
+    .reveal-delay-4 { transition-delay: 0.4s; }
+    @media (prefers-reduced-motion: reduce) {
+      .reveal { opacity: 1; transform: none; transition: none; }
+    }
+
+    /* ── Header glass ─────────────────────────────── */
+    #site-header {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+      transition: all 0.35s ease;
+      background: rgba(250,250,247,0.92);
+      backdrop-filter: blur(0px);
+      border-bottom: 1px solid transparent;
+    }
+    #site-header.scrolled {
+      backdrop-filter: blur(16px);
+      background: rgba(250,250,247,0.85);
+      border-bottom-color: rgba(224,218,210,0.6);
+      box-shadow: 0 1px 20px rgba(28,25,23,0.06);
+    }
+
+    /* ── Before / After Slider ────────────────────── */
+    .ba-container {
+      position: relative; overflow: hidden; border-radius: 1rem;
+      cursor: ew-resize; user-select: none; touch-action: none;
+    }
+    .ba-after { position: absolute; inset: 0; overflow: hidden; }
+    .ba-handle {
+      position: absolute; top: 0; bottom: 0;
+      width: 2px; background: white;
+      display: flex; align-items: center; justify-content: center;
+      cursor: ew-resize;
+    }
+    .ba-handle-circle {
+      width: 44px; height: 44px; border-radius: 50%;
+      background: white; box-shadow: 0 2px 12px rgba(0,0,0,0.18);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 14px; color: #0D9488; font-weight: 700;
+      flex-shrink: 0;
+    }
+    .ba-label {
+      position: absolute; top: 12px;
+      padding: 4px 10px; border-radius: 20px;
+      font-size: 11px; font-weight: 600; letter-spacing: 0.05em; text-transform: uppercase;
+    }
+
+    /* ── Accordion ────────────────────────────────── */
+    .accordion-content { max-height: 0; overflow: hidden; transition: max-height 0.35s ease; }
+    .accordion-content.open { max-height: 400px; }
+    .accordion-icon { transition: transform 0.3s ease; }
+    .accordion-item.open .accordion-icon { transform: rotate(45deg); }
+
+    /* ── Custom scrollbar ─────────────────────────── */
+    ::-webkit-scrollbar { width: 6px; }
+    ::-webkit-scrollbar-track { background: #F0EDE8; }
+    ::-webkit-scrollbar-thumb { background: #0D9488; border-radius: 3px; }
+
+    /* ── Mobile bottom bar ────────────────────────── */
+    #mobile-bar { display: none; }
+    @media (max-width: 767px) {
+      #mobile-bar { display: flex; }
+    }
+
+    /* ── Counter animation ────────────────────────── */
+    .counter-num { display: inline-block; }
+
+    /* ── CTA button shimmer ───────────────────────── */
+    .btn-primary {
+      position: relative; overflow: hidden;
+      background: #059669; color: white;
+      transition: background 0.2s ease, transform 0.15s ease, box-shadow 0.2s ease;
+    }
+    .btn-primary:hover {
+      background: #047857; transform: translateY(-1px);
+      box-shadow: 0 8px 24px rgba(5,150,105,0.3);
+    }
+    .btn-primary:active { transform: translateY(0); }
+
+    .btn-outline {
+      border: 1.5px solid #0D9488; color: #0D9488;
+      transition: all 0.2s ease;
+    }
+    .btn-outline:hover { background: #0D9488; color: white; transform: translateY(-1px); }
+
+    /* ── Card hover ───────────────────────────────── */
+    .card-hover { transition: transform 0.25s ease, box-shadow 0.25s ease; }
+    .card-hover:hover { transform: translateY(-4px); box-shadow: 0 16px 40px rgba(28,25,23,0.1); }
+
+    /* ── Triage cards ─────────────────────────────── */
+    .triage-card {
+      border: 1.5px solid #E8E2D9;
+      transition: all 0.25s ease;
+      cursor: pointer;
+    }
+    .triage-card:hover {
+      border-color: #0D9488; background: rgba(13,148,136,0.04);
+      transform: translateY(-3px); box-shadow: 0 8px 24px rgba(13,148,136,0.12);
+    }
+
+    /* ── Doctor card ──────────────────────────────── */
+    .doctor-card img {
+      transition: transform 0.4s ease;
+    }
+    .doctor-card:hover img { transform: scale(1.03); }
+
+    /* ── Treatment pill ───────────────────────────── */
+    .treatment-badge {
+      display: inline-flex; align-items: center; gap: 6px;
+      padding: 4px 10px; border-radius: 20px;
+      font-size: 12px; font-weight: 500;
+      background: rgba(13,148,136,0.1); color: #0D9488;
+    }
+
+    /* ── Process step ─────────────────────────────── */
+    .process-line {
+      flex: 1; height: 1px; background: linear-gradient(90deg, #0D9488, #E8E2D9);
+    }
+
+    /* ── Testimonial card ─────────────────────────── */
+    .testimonial-card {
+      background: white; border: 1px solid #F0EDE8;
+      border-radius: 1.25rem; padding: 1.5rem;
+      transition: box-shadow 0.25s ease;
+    }
+    .testimonial-card:hover { box-shadow: 0 8px 32px rgba(28,25,23,0.08); }
+
+    /* ── Gradient section separator ──────────────── */
+    .section-divider {
+      height: 1px;
+      background: linear-gradient(90deg, transparent, #E8E2D9 30%, #E8E2D9 70%, transparent);
+    }
+
+    /* ── GHL placeholder ─────────────────────────── */
+    .ghl-placeholder {
+      background: white; border: 2px dashed #C8C0B6;
+      border-radius: 1.25rem; padding: 3rem 2rem;
+      text-align: center; color: #6B6560;
+    }
+  </style>
+
+  <!-- Schema.org: Dentist + LocalBusiness -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Dentist",
+    "name": "Dra. Johanna Joselyn Vázquez Hernández",
+    "description": "Clínica dental especializada en implantes, ortodoncia invisible y estética dental en Tuxtla Gutiérrez, Chiapas.",
+    "url": "https://clinicadentalserena.es",
+    "telephone": "+34 91 000 0000",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Calle Dra. Joselyn 24",
+      "addressLocality": "Tuxtla Gutiérrez, Chiapas",
+      "postalCode": "28001",
+      "addressCountry": "ES"
+    },
+    "aggregateRating": {
+      "@type": "AggregateRating",
+      "ratingValue": "4.9",
+      "reviewCount": "312"
+    },
+    "openingHours": ["Mo-Fr 09:00-20:00", "Sa 09:00-14:00"]
+  }
+  </script>
+</head>
+
+<body class="bg-ivory font-sans">
+
+<!-- ════════════════════════════════════════════════
+     ① HEADER STICKY
+════════════════════════════════════════════════ -->
+<div style="background:#0d9488;color:#fff;font-size:13px;font-weight:600;text-align:center;padding:8px 16px;">✨ Dra. Johanna Joselyn Vázquez Hernández · Céd. Prof. 4502224 / 5328253 · Registro COFEPRIS: 2507012002A00079 · AP Medical Center</div>
+<header id="site-header" class="py-4 px-6">
+  <div class="max-w-6xl mx-auto flex items-center justify-between gap-6">
+
+    <!-- Logo -->
+    <a href="#" class="flex items-center gap-2 group flex-shrink-0">
+      <div class="w-8 h-8 rounded-full bg-teal flex items-center justify-center">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.5" stroke-linecap="round"><path d="M12 2C8 2 5 5.5 5 9c0 2.5 1 4.5 2.5 6L12 22l4.5-7C18 13.5 19 11.5 19 9c0-3.5-3-7-7-7z"/></svg>
+      </div>
+      <span class="font-serif text-xl text-charcoal group-hover:text-teal transition-colors">Dra. Joselyn<span class="text-teal">.</span></span>
+    </a>
+
+    <!-- Nav desktop -->
+    <nav class="hidden md:flex items-center gap-7 text-sm font-medium text-muted">
+      <a href="#tratamientos" class="hover:text-teal transition-colors">Tratamientos</a>
+      <a href="#resultados" class="hover:text-teal transition-colors">Resultados</a>
+      <a href="#equipo" class="hover:text-teal transition-colors">Equipo</a>
+      <a href="#faq" class="hover:text-teal transition-colors">FAQ</a>
+    </nav>
+
+    <!-- CTAs desktop -->
+    <div class="flex items-center gap-3">
+      <a href="https://wa.me/529612333457?text=Hola%2C%20me%20gustar%C3%ADa%20informaci%C3%B3n%20sobre%20un%20tratamiento."
+         class="hidden md:flex items-center gap-2 text-sm font-medium text-muted hover:text-teal transition-colors">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M11.998 2C6.479 2 2 6.479 2 12.001c0 1.762.459 3.414 1.264 4.853L2 22l5.306-1.254A9.954 9.954 0 0011.998 22C17.521 22 22 17.521 22 12c0-5.522-4.479-10-10.002-10zm0 18.178a8.172 8.172 0 01-4.163-1.136l-.298-.178-3.096.732.78-3.014-.195-.309A8.147 8.147 0 013.822 12c0-4.508 3.668-8.178 8.176-8.178 4.508 0 8.178 3.67 8.178 8.178 0 4.509-3.67 8.178-8.178 8.178z"/></svg>
+        WhatsApp
+      </a>
+      <a href="#reservar" class="btn-primary rounded-full px-5 py-2.5 text-sm font-semibold">
+        Reservar valoración
+      </a>
+      <!-- Mobile menu button -->
+      <button id="menu-btn" class="md:hidden p-2 rounded-lg hover:bg-stone transition-colors" aria-label="Menú">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 12h18M3 6h18M3 18h18"/></svg>
+      </button>
+    </div>
+  </div>
+
+  <!-- Mobile nav -->
+  <div id="mobile-nav" class="hidden md:hidden mt-4 pt-4 border-t border-warm">
+    <nav class="flex flex-col gap-3 text-sm font-medium">
+      <a href="#tratamientos" class="text-muted hover:text-teal transition-colors py-1">Tratamientos</a>
+      <a href="#resultados" class="text-muted hover:text-teal transition-colors py-1">Resultados</a>
+      <a href="#equipo" class="text-muted hover:text-teal transition-colors py-1">Equipo</a>
+      <a href="#faq" class="text-muted hover:text-teal transition-colors py-1">FAQ</a>
+      <a href="https://wa.me/529612333457" class="text-muted hover:text-teal transition-colors py-1">WhatsApp</a>
+    </nav>
+  </div>
+</header>
+
+
+<!-- ════════════════════════════════════════════════
+     ② HERO
+════════════════════════════════════════════════ -->
+<section class="relative min-h-screen flex items-center pt-20 overflow-hidden">
+
+  <!-- Background subtle gradient -->
+  <div class="absolute inset-0 bg-gradient-to-br from-ivory via-stone to-ivory opacity-80 pointer-events-none"></div>
+  <!-- Decorative circle -->
+  <div class="absolute top-1/4 right-0 w-96 h-96 rounded-full bg-teal opacity-5 blur-3xl pointer-events-none translate-x-1/2"></div>
+  <div class="absolute bottom-0 left-1/4 w-64 h-64 rounded-full bg-emerald opacity-5 blur-3xl pointer-events-none"></div>
+
+  <div class="relative max-w-6xl mx-auto px-6 py-20 grid md:grid-cols-2 gap-12 items-center w-full">
+
+    <!-- Left: Copy -->
+    <div>
+      <p class="reveal treatment-badge mb-6">
+        <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><circle cx="12" cy="12" r="10"/></svg>
+        Clínica dental · Tuxtla Gutiérrez, Chiapas
+      </p>
+
+      <h1 class="reveal reveal-delay-1 font-serif text-5xl md:text-6xl leading-tight text-charcoal mb-6">
+        Tu sonrisa,<br/>
+        <span class="text-teal italic">planificada</span><br/>
+        desde el primer día
+      </h1>
+
+      <p class="reveal reveal-delay-2 text-muted text-lg leading-relaxed mb-8 max-w-md">
+        Implantología, ortodoncia invisible y estética dental con planificación digital.
+        Te explicamos opciones, tiempos y costes antes de que tomes ninguna decisión.
+      </p>
+
+      <!-- Trust badges inline -->
+      <div class="reveal reveal-delay-2 flex flex-wrap gap-4 mb-10 text-sm text-muted">
+        <span class="flex items-center gap-1.5">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="#B8975A"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          4.9 en Google
+        </span>
+        <span class="flex items-center gap-1.5">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+          +3.000 tratamientos
+        </span>
+        <span class="flex items-center gap-1.5">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg>
+          Financiación disponible
+        </span>
+      </div>
+
+      <!-- CTAs -->
+      <div class="reveal reveal-delay-3 flex flex-wrap gap-4">
+        <a href="#reservar" class="btn-primary rounded-full px-7 py-3.5 font-semibold text-base">
+          Reservar valoración
+          <svg class="inline ml-2" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </a>
+        <a href="https://wa.me/529612333457?text=Hola%2C%20me%20gustar%C3%ADa%20informaci%C3%B3n%20sobre%20un%20tratamiento."
+           class="btn-outline rounded-full px-7 py-3.5 font-semibold text-base flex items-center gap-2">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M11.998 2C6.479 2 2 6.479 2 12.001c0 1.762.459 3.414 1.264 4.853L2 22l5.306-1.254A9.954 9.954 0 0011.998 22C17.521 22 22 17.521 22 12c0-5.522-4.479-10-10.002-10zm0 18.178a8.172 8.172 0 01-4.163-1.136l-.298-.178-3.096.732.78-3.014-.195-.309A8.147 8.147 0 013.822 12c0-4.508 3.668-8.178 8.176-8.178 4.508 0 8.178 3.67 8.178 8.178 0 4.509-3.67 8.178-8.178 8.178z"/></svg>
+          WhatsApp
+        </a>
+      </div>
+    </div>
+
+    <!-- Right: Image -->
+    <div class="reveal reveal-delay-2 relative">
+      <div class="relative rounded-3xl overflow-hidden aspect-[4/5] shadow-2xl shadow-charcoal/10">
+        <img src="https://images.unsplash.com/photo-1629909613654-28e377c37b09?w=800&q=80"
+             alt="Paciente con sonrisa natural en clínica Dra. Joselyn"
+             class="w-full h-full object-cover"
+             onerror="this.style.background='linear-gradient(135deg,#E8E2D9,#0D9488)';this.alt='';" />
+        <!-- Overlay badge -->
+        <div class="absolute bottom-6 left-6 right-6 bg-white/90 backdrop-blur-sm rounded-2xl p-4 shadow-lg">
+          <div class="flex items-center gap-3">
+            <div class="w-10 h-10 rounded-full bg-emerald/10 flex items-center justify-center flex-shrink-0">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#059669" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+            </div>
+            <div>
+              <p class="text-sm font-semibold text-charcoal">Valoración con diagnóstico incluida</p>
+              <p class="text-xs text-muted">Sin compromiso · Con presupuesto claro</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Floating stat -->
+      <div class="absolute -top-4 -right-4 bg-white rounded-2xl shadow-xl p-4 border border-warm">
+        <div class="flex items-center gap-2">
+          <div class="flex -space-x-1">
+            <div class="w-7 h-7 rounded-full bg-stone border-2 border-white flex items-center justify-center text-xs font-bold text-teal">M</div>
+            <div class="w-7 h-7 rounded-full bg-warm border-2 border-white flex items-center justify-center text-xs font-bold text-teal">R</div>
+            <div class="w-7 h-7 rounded-full bg-teal/20 border-2 border-white flex items-center justify-center text-xs font-bold text-teal">A</div>
+          </div>
+          <div>
+            <p class="text-xs font-semibold text-charcoal"><span class="counter-num" data-target="312">0</span>+ pacientes</p>
+            <div class="flex gap-0.5 mt-0.5">
+              <svg width="10" height="10" viewBox="0 0 24 24" fill="#B8975A"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+              <svg width="10" height="10" viewBox="0 0 24 24" fill="#B8975A"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+              <svg width="10" height="10" viewBox="0 0 24 24" fill="#B8975A"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+              <svg width="10" height="10" viewBox="0 0 24 24" fill="#B8975A"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+              <svg width="10" height="10" viewBox="0 0 24 24" fill="#B8975A"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Scroll hint -->
+  <div class="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 text-muted text-xs">
+    <span>Descubre más</span>
+    <div class="w-px h-8 bg-gradient-to-b from-muted to-transparent animate-bounce"></div>
+  </div>
+</section>
+
+
+<!-- ════════════════════════════════════════════════
+     ③ PROOF STRIP — Credenciales
+════════════════════════════════════════════════ -->
+<section class="bg-charcoal py-8 px-6">
+  <div class="max-w-6xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
+
+    <div class="reveal flex flex-col items-center gap-1">
+      <span class="text-2xl font-serif text-white counter-num" data-target="15">0</span><span class="text-2xl font-serif text-teal">+</span>
+      <span class="text-xs text-white/50 font-medium uppercase tracking-wider">Años de experiencia</span>
+    </div>
+    <div class="reveal reveal-delay-1 flex flex-col items-center gap-1">
+      <span class="text-2xl font-serif text-white counter-num" data-target="3000">0</span><span class="text-2xl font-serif text-teal">+</span>
+      <span class="text-xs text-white/50 font-medium uppercase tracking-wider">Tratamientos</span>
+    </div>
+    <div class="reveal reveal-delay-2 flex flex-col items-center gap-1">
+      <span class="text-2xl font-serif text-white">4.9</span>
+      <div class="flex gap-0.5">
+        <svg width="12" height="12" viewBox="0 0 24 24" fill="#B8975A"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+        <svg width="12" height="12" viewBox="0 0 24 24" fill="#B8975A"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+        <svg width="12" height="12" viewBox="0 0 24 24" fill="#B8975A"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+        <svg width="12" height="12" viewBox="0 0 24 24" fill="#B8975A"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+        <svg width="12" height="12" viewBox="0 0 24 24" fill="#B8975A"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+      </div>
+      <span class="text-xs text-white/50 font-medium uppercase tracking-wider">Google Reviews</span>
+    </div>
+    <div class="reveal reveal-delay-3 flex flex-col items-center gap-1">
+      <span class="text-2xl font-serif text-teal">0%</span>
+      <span class="text-xs text-white/50 font-medium uppercase tracking-wider">Financiación hasta 36m</span>
+    </div>
+
+  </div>
+</section>
+
+
+<!-- ════════════════════════════════════════════════
+     ④ TRIAGE — ¿Qué te gustaría mejorar?
+════════════════════════════════════════════════ -->
+<section class="py-24 px-6 bg-stone">
+  <div class="max-w-6xl mx-auto">
+
+    <div class="text-center mb-14">
+      <p class="reveal treatment-badge mx-auto mb-4 w-fit">Encuentra tu tratamiento</p>
+      <h2 class="reveal reveal-delay-1 font-serif text-4xl text-charcoal">¿Qué te gustaría mejorar?</h2>
+      <p class="reveal reveal-delay-2 text-muted mt-3 max-w-lg mx-auto">Cuéntanos qué buscas y te guiamos hacia la mejor opción para ti.</p>
+    </div>
+
+    <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4">
+      <a href="#tratamientos" class="reveal triage-card bg-white rounded-2xl p-6 flex flex-col items-center gap-3 text-center no-underline">
+        <span class="text-3xl">🦷</span>
+        <span class="text-sm font-semibold text-charcoal">Me faltan<br/>dientes</span>
+      </a>
+      <a href="#tratamientos" class="reveal reveal-delay-1 triage-card bg-white rounded-2xl p-6 flex flex-col items-center gap-3 text-center no-underline">
+        <span class="text-3xl">😁</span>
+        <span class="text-sm font-semibold text-charcoal">Quiero alinear<br/>mi sonrisa</span>
+      </a>
+      <a href="#tratamientos" class="reveal reveal-delay-2 triage-card bg-white rounded-2xl p-6 flex flex-col items-center gap-3 text-center no-underline">
+        <span class="text-3xl">✨</span>
+        <span class="text-sm font-semibold text-charcoal">Mejorar<br/>estética dental</span>
+      </a>
+      <a href="#reservar" class="reveal reveal-delay-3 triage-card bg-white rounded-2xl p-6 flex flex-col items-center gap-3 text-center no-underline">
+        <span class="text-3xl">😰</span>
+        <span class="text-sm font-semibold text-charcoal">Tengo miedo<br/>al dentista</span>
+      </a>
+      <a href="#reservar" class="reveal reveal-delay-4 triage-card bg-white rounded-2xl p-6 flex flex-col items-center gap-3 text-center no-underline col-span-2 lg:col-span-1">
+        <span class="text-3xl">🤔</span>
+        <span class="text-sm font-semibold text-charcoal">No sé qué<br/>necesito</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+
+<!-- ════════════════════════════════════════════════
+     ⑤ TRATAMIENTOS CORE
+════════════════════════════════════════════════ -->
+<section id="tratamientos" class="py-24 px-6 bg-ivory">
+  <div class="max-w-6xl mx-auto">
+
+    <div class="text-center mb-14">
+      <p class="reveal treatment-badge mx-auto mb-4 w-fit">Especialidades</p>
+      <h2 class="reveal reveal-delay-1 font-serif text-4xl text-charcoal">Tratamientos diseñados para ti</h2>
+      <p class="reveal reveal-delay-2 text-muted mt-3 max-w-lg mx-auto">Sin jerga médica. Te explicamos qué cambia en tu vida con cada tratamiento.</p>
+    </div>
+
+    <div class="grid md:grid-cols-3 gap-6">
+
+      <!-- Implantes -->
+      <div class="reveal card-hover bg-white rounded-3xl overflow-hidden border border-warm shadow-sm">
+        <div class="bg-gradient-to-br from-teal/10 to-teal/5 p-8 pb-6">
+          <span class="text-4xl">🦷</span>
+          <h3 class="font-serif text-2xl text-charcoal mt-4 mb-2">Ortopedia Dental Temprana</h3>
+          <p class="text-muted text-sm leading-relaxed">Recupera la función y la seguridad al comer y sonreír, con una solución que dura toda la vida.</p>
+        </div>
+        <div class="p-6 pt-4">
+          <p class="text-xs text-muted font-semibold uppercase tracking-wider mb-3">Incluye</p>
+          <ul class="space-y-2 mb-6">
+            <li class="flex items-center gap-2 text-sm text-charcoal">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#059669" stroke-width="2.5"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+              Diagnóstico 3D incluido
+            </li>
+            <li class="flex items-center gap-2 text-sm text-charcoal">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#059669" stroke-width="2.5"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+              Con opciones de sedación
+            </li>
+            <li class="flex items-center gap-2 text-sm text-charcoal">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#059669" stroke-width="2.5"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+              Garantía de 10 años
+            </li>
+          </ul>
+          <div class="flex items-end justify-between">
+            <div>
+              <p class="text-xs text-muted">Desde</p>
+              <p class="text-xl font-semibold text-charcoal">49€<span class="text-sm font-normal text-muted">/mes</span></p>
+            </div>
+            <a href="#reservar" class="btn-primary rounded-full px-5 py-2.5 text-sm font-semibold">Valorar mi caso</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Ortodoncia -->
+      <div class="reveal reveal-delay-1 card-hover bg-white rounded-3xl overflow-hidden border border-warm shadow-sm">
+        <div class="bg-gradient-to-br from-emerald/10 to-emerald/5 p-8 pb-6">
+          <span class="text-4xl">😁</span>
+          <h3 class="font-serif text-2xl text-charcoal mt-4 mb-2">Odontopediatría Libre de Trauma</h3>
+          <p class="text-muted text-sm leading-relaxed">Alinea tu sonrisa sin que nadie lo note. Removible, cómoda y con resultados visibles en semanas.</p>
+        </div>
+        <div class="p-6 pt-4">
+          <p class="text-xs text-muted font-semibold uppercase tracking-wider mb-3">Incluye</p>
+          <ul class="space-y-2 mb-6">
+            <li class="flex items-center gap-2 text-sm text-charcoal">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#059669" stroke-width="2.5"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+              Plan digital de tu sonrisa
+            </li>
+            <li class="flex items-center gap-2 text-sm text-charcoal">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#059669" stroke-width="2.5"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+              Invisible y removible
+            </li>
+            <li class="flex items-center gap-2 text-sm text-charcoal">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#059669" stroke-width="2.5"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+              Retención incluida
+            </li>
+          </ul>
+          <div class="flex items-end justify-between">
+            <div>
+              <p class="text-xs text-muted">Desde</p>
+              <p class="text-xl font-semibold text-charcoal">59€<span class="text-sm font-normal text-muted">/mes</span></p>
+            </div>
+            <a href="#reservar" class="btn-primary rounded-full px-5 py-2.5 text-sm font-semibold">Valorar mi caso</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Estética -->
+      <div class="reveal reveal-delay-2 card-hover bg-white rounded-3xl overflow-hidden border border-warm shadow-sm">
+        <div class="bg-gradient-to-br from-gold/10 to-gold/5 p-8 pb-6">
+          <span class="text-4xl">✨</span>
+          <h3 class="font-serif text-2xl text-charcoal mt-4 mb-2">Estética dental</h3>
+          <p class="text-muted text-sm leading-relaxed">Carillas, blanqueamiento y diseño de sonrisa. Resultados visibles y duraderos que se adaptan a ti.</p>
+        </div>
+        <div class="p-6 pt-4">
+          <p class="text-xs text-muted font-semibold uppercase tracking-wider mb-3">Incluye</p>
+          <ul class="space-y-2 mb-6">
+            <li class="flex items-center gap-2 text-sm text-charcoal">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#059669" stroke-width="2.5"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+              Diseño digital de sonrisa
+            </li>
+            <li class="flex items-center gap-2 text-sm text-charcoal">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#059669" stroke-width="2.5"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+              Resultado natural y duradero
+            </li>
+            <li class="flex items-center gap-2 text-sm text-charcoal">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#059669" stroke-width="2.5"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+              Sin cirugía en muchos casos
+            </li>
+          </ul>
+          <div class="flex items-end justify-between">
+            <div>
+              <p class="text-xs text-muted">Desde</p>
+              <p class="text-xl font-semibold text-charcoal">35€<span class="text-sm font-normal text-muted">/mes</span></p>
+            </div>
+            <a href="#reservar" class="btn-primary rounded-full px-5 py-2.5 text-sm font-semibold">Valorar mi caso</a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- ════════════════════════════════════════════════
+     ⑥ ANTES / DESPUÉS
+════════════════════════════════════════════════ -->
+<section id="resultados" class="py-24 px-6 bg-stone">
+  <div class="max-w-6xl mx-auto">
+
+    <div class="grid md:grid-cols-2 gap-16 items-center">
+      <div>
+        <p class="reveal treatment-badge mb-4">Resultados reales</p>
+        <h2 class="reveal reveal-delay-1 font-serif text-4xl text-charcoal mb-4">Pacientes reales.<br/>Transformaciones reales.</h2>
+        <p class="reveal reveal-delay-2 text-muted leading-relaxed mb-6">Arrastra el slider para comparar. Todos los casos son de pacientes de Dra. Joselyn, con su consentimiento explícito.</p>
+        <div class="reveal reveal-delay-2 space-y-3">
+          <button class="case-tab w-full text-left px-4 py-3 rounded-xl bg-white border border-warm hover:border-teal text-sm font-medium text-charcoal transition-all active-tab" data-case="0">
+            Caso 1 — Implante completo · 4 meses
+          </button>
+          <button class="case-tab w-full text-left px-4 py-3 rounded-xl bg-white border border-warm hover:border-teal text-sm font-medium text-charcoal transition-all" data-case="1">
+            Caso 2 — Odontopediatría Libre de Trauma · 8 meses
+          </button>
+          <button class="case-tab w-full text-left px-4 py-3 rounded-xl bg-white border border-warm hover:border-teal text-sm font-medium text-charcoal transition-all" data-case="2">
+            Caso 3 — Carillas cerámicas · 3 semanas
+          </button>
+        </div>
+        <div class="reveal reveal-delay-3 mt-8">
+          <a href="#reservar" class="btn-primary rounded-full px-6 py-3 font-semibold text-sm inline-flex items-center gap-2">
+            Quiero valorar mi caso
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </a>
+        </div>
+      </div>
+
+      <!-- Before/After slider -->
+      <div class="reveal reveal-delay-1">
+        <div class="ba-container aspect-square w-full max-w-md mx-auto" id="ba-slider">
+          <!-- BEFORE image -->
+          <img src="https://images.unsplash.com/photo-1588776814546-1ffbb39a0536?w=800&q=80"
+               alt="Antes del tratamiento"
+               class="w-full h-full object-cover select-none"
+               onerror="this.src='data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%22600%22 height=%22600%22><rect fill=%22%23E8E2D9%22 width=%22600%22 height=%22600%22/><text x=%22300%22 y=%22300%22 text-anchor=%22middle%22 fill=%22%236B6560%22 font-size=%2228%22>ANTES</text></svg>'"/>
+          <span class="ba-label left-4 bg-charcoal/80 text-white backdrop-blur-sm">Antes</span>
+
+          <!-- AFTER overlay -->
+          <div class="ba-after" style="width: 50%;">
+            <img src="https://images.unsplash.com/photo-1559757175-5700dde675bc?w=800&q=80"
+                 alt="Después del tratamiento"
+                 class="w-full h-full object-cover select-none"
+                 style="min-width: calc(var(--full-width, 600px)); max-width: none;"
+                 onerror="this.src='data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%22600%22 height=%22600%22><rect fill=%22%230D9488%22 width=%22600%22 height=%22600%22/><text x=%22300%22 y=%22300%22 text-anchor=%22middle%22 fill=%22white%22 font-size=%2228%22>DESPUÉS</text></svg>'"/>
+            <span class="ba-label right-4 bg-teal/90 text-white backdrop-blur-sm">Después</span>
+          </div>
+
+          <!-- Handle -->
+          <div class="ba-handle" id="ba-handle" style="left: 50%;">
+            <div class="ba-handle-circle">⟺</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ════════════════════════════════════════════════
+     ⑦ EQUIPO MÉDICO
+════════════════════════════════════════════════ -->
+<section id="equipo" class="py-24 px-6 bg-ivory">
+  <div class="max-w-6xl mx-auto">
+
+    <div class="text-center mb-14">
+      <p class="reveal treatment-badge mx-auto mb-4 w-fit">El equipo</p>
+      <h2 class="reveal reveal-delay-1 font-serif text-4xl text-charcoal">Conoce a quienes cuidarán de ti</h2>
+      <p class="reveal reveal-delay-2 text-muted mt-3 max-w-lg mx-auto">Especialistas reales, con nombre y credenciales. No delegamos nada.</p>
+    </div>
+
+    <div class="grid md:grid-cols-3 gap-8">
+
+      <div class="reveal doctor-card card-hover bg-white rounded-3xl overflow-hidden border border-warm">
+        <div class="aspect-[4/5] overflow-hidden">
+          <img src="https://images.unsplash.com/photo-1559839734-2b71ea197ec2?w=600&q=80"
+               alt="Dra. Laura Serrano"
+               class="w-full h-full object-cover"
+               onerror="this.style.background='linear-gradient(135deg,#E8E2D9,#C8C0B6)';this.alt=''" />
+        </div>
+        <div class="p-6">
+          <span class="treatment-badge text-xs mb-3 inline-block">Implantología</span>
+          <h3 class="font-serif text-xl text-charcoal">Dra. Laura Serrano</h3>
+          <p class="text-sm text-muted mt-1">Especialista en Cirugía e Implantología</p>
+          <div class="mt-3 pt-3 border-t border-warm flex items-center justify-between text-xs text-muted">
+            <span>Nº Col. 28-12345</span>
+            <span class="font-semibold text-teal">+1.800 implantes</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="reveal reveal-delay-1 doctor-card card-hover bg-white rounded-3xl overflow-hidden border border-warm">
+        <div class="aspect-[4/5] overflow-hidden">
+          <img src="https://images.unsplash.com/photo-1537368910025-700350fe46c7?w=600&q=80"
+               alt="Dr. Marcos Vidal"
+               class="w-full h-full object-cover"
+               onerror="this.style.background='linear-gradient(135deg,#E8E2D9,#C8C0B6)';this.alt=''" />
+        </div>
+        <div class="p-6">
+          <span class="treatment-badge text-xs mb-3 inline-block">Ortodoncia</span>
+          <h3 class="font-serif text-xl text-charcoal">Dr. Marcos Vidal</h3>
+          <p class="text-sm text-muted mt-1">Especialista en Ortodoncia Invisible</p>
+          <div class="mt-3 pt-3 border-t border-warm flex items-center justify-between text-xs text-muted">
+            <span>Nº Col. 28-67890</span>
+            <span class="font-semibold text-teal">Invisalign Diamond</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="reveal reveal-delay-2 doctor-card card-hover bg-white rounded-3xl overflow-hidden border border-warm">
+        <div class="aspect-[4/5] overflow-hidden">
+          <img src="https://images.unsplash.com/photo-1607990281513-2c110a25bd8c?w=600&q=80"
+               alt="Dra. Elena Ruiz"
+               class="w-full h-full object-cover"
+               onerror="this.style.background='linear-gradient(135deg,#E8E2D9,#C8C0B6)';this.alt=''" />
+        </div>
+        <div class="p-6">
+          <span class="treatment-badge text-xs mb-3 inline-block">Estética Dental</span>
+          <h3 class="font-serif text-xl text-charcoal">Dra. Elena Ruiz</h3>
+          <p class="text-sm text-muted mt-1">Especialista en Estética y Carillas</p>
+          <div class="mt-3 pt-3 border-t border-warm flex items-center justify-between text-xs text-muted">
+            <span>Nº Col. 28-11223</span>
+            <span class="font-semibold text-teal">+1.200 carillas</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- ════════════════════════════════════════════════
+     ⑧ PROCESO EN 4 PASOS
+════════════════════════════════════════════════ -->
+<section class="py-24 px-6 bg-charcoal">
+  <div class="max-w-5xl mx-auto">
+
+    <div class="text-center mb-16">
+      <p class="reveal treatment-badge bg-white/10 text-teal border-teal/20 mx-auto mb-4 w-fit">Sin sorpresas</p>
+      <h2 class="reveal reveal-delay-1 font-serif text-4xl text-white">Tu nueva sonrisa en 4 pasos</h2>
+      <p class="reveal reveal-delay-2 text-white/50 mt-3 max-w-lg mx-auto">Sabes exactamente qué va a pasar antes de comprometerte con nada.</p>
+    </div>
+
+    <div class="grid md:grid-cols-4 gap-8">
+      <div class="reveal flex flex-col items-center text-center gap-4">
+        <div class="w-14 h-14 rounded-2xl bg-teal/20 border border-teal/30 flex items-center justify-center">
+          <span class="text-teal font-serif text-xl font-bold">01</span>
+        </div>
+        <h3 class="text-white font-semibold">Valoración</h3>
+        <p class="text-white/40 text-sm leading-relaxed">Te escuchamos. Exploramos y hacemos el diagnóstico inicial. Sin compromiso.</p>
+      </div>
+      <div class="reveal reveal-delay-1 flex flex-col items-center text-center gap-4">
+        <div class="w-14 h-14 rounded-2xl bg-teal/20 border border-teal/30 flex items-center justify-center">
+          <span class="text-teal font-serif text-xl font-bold">02</span>
+        </div>
+        <h3 class="text-white font-semibold">Tu plan</h3>
+        <p class="text-white/40 text-sm leading-relaxed">Te explicamos opciones, tiempos y presupuesto por escrito. Tú decides.</p>
+      </div>
+      <div class="reveal reveal-delay-2 flex flex-col items-center text-center gap-4">
+        <div class="w-14 h-14 rounded-2xl bg-teal/20 border border-teal/30 flex items-center justify-center">
+          <span class="text-teal font-serif text-xl font-bold">03</span>
+        </div>
+        <h3 class="text-white font-semibold">Tratamiento</h3>
+        <p class="text-white/40 text-sm leading-relaxed">Con tecnología digital y la atención de tu especialista. A tu ritmo.</p>
+      </div>
+      <div class="reveal reveal-delay-3 flex flex-col items-center text-center gap-4">
+        <div class="w-14 h-14 rounded-2xl bg-emerald/20 border border-emerald/30 flex items-center justify-center">
+          <span class="text-emerald font-serif text-xl font-bold">04</span>
+        </div>
+        <h3 class="text-white font-semibold">Resultado</h3>
+        <p class="text-white/40 text-sm leading-relaxed">Disfrutas. Nosotros te acompañamos con seguimiento y garantía incluidos.</p>
+      </div>
+    </div>
+
+    <div class="reveal reveal-delay-3 text-center mt-14">
+      <a href="#reservar" class="btn-primary rounded-full px-8 py-4 font-semibold text-base">
+        Empezar mi plan → Reservar valoración
+      </a>
+    </div>
+
+  </div>
+</section>
+
+
+<!-- ════════════════════════════════════════════════
+     ⑨ TESTIMONIOS
+════════════════════════════════════════════════ -->
+<section class="py-24 px-6 bg-ivory">
+  <div class="max-w-6xl mx-auto">
+
+    <div class="text-center mb-14">
+      <h2 class="reveal font-serif text-4xl text-charcoal">Lo que dicen nuestros pacientes</h2>
+      <div class="reveal reveal-delay-2 flex items-center justify-center gap-2 mt-3">
+        <div class="flex gap-0.5">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="#B8975A"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="#B8975A"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="#B8975A"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="#B8975A"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="#B8975A"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+        </div>
+        <span class="text-muted text-sm">4.9 · 312 reseñas en Google</span>
+      </div>
+    </div>
+
+    <div class="grid md:grid-cols-3 gap-6">
+
+      <div class="reveal testimonial-card">
+        <div class="flex gap-0.5 mb-4">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="#B8975A"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="#B8975A"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="#B8975A"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="#B8975A"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="#B8975A"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+        </div>
+        <p class="text-charcoal text-sm leading-relaxed mb-4">"Tenía un miedo horrible al dentista. La Dra. Serrano me explicó cada paso y no sentí nada. Mis implantes llevan ya 2 años perfectos."</p>
+        <div class="flex items-center gap-3">
+          <div class="w-8 h-8 rounded-full bg-teal/20 flex items-center justify-center text-teal text-xs font-bold">M</div>
+          <div>
+            <p class="text-xs font-semibold text-charcoal">María G.</p>
+            <p class="text-xs text-muted">Implantes · Google</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="reveal reveal-delay-1 testimonial-card">
+        <div class="flex gap-0.5 mb-4">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="#B8975A"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="#B8975A"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="#B8975A"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="#B8975A"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="#B8975A"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+        </div>
+        <p class="text-charcoal text-sm leading-relaxed mb-4">"Me preocupaba el precio. Al final la financiación era perfectamente asumible y el resultado en solo 7 meses superó todas mis expectativas."</p>
+        <div class="flex items-center gap-3">
+          <div class="w-8 h-8 rounded-full bg-emerald/20 flex items-center justify-center text-emerald text-xs font-bold">R</div>
+          <div>
+            <p class="text-xs font-semibold text-charcoal">Roberto P.</p>
+            <p class="text-xs text-muted">Ortodoncia · Google</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="reveal reveal-delay-2 testimonial-card">
+        <div class="flex gap-0.5 mb-4">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="#B8975A"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="#B8975A"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="#B8975A"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="#B8975A"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="#B8975A"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+        </div>
+        <p class="text-charcoal text-sm leading-relaxed mb-4">"El diseño de carillas fue un antes y un después en mi vida. El resultado es absolutamente natural. Tres amigas ya han ido después de ver mis fotos."</p>
+        <div class="flex items-center gap-3">
+          <div class="w-8 h-8 rounded-full bg-gold/20 flex items-center justify-center text-gold text-xs font-bold">A</div>
+          <div>
+            <p class="text-xs font-semibold text-charcoal">Ana M.</p>
+            <p class="text-xs text-muted">Carillas · Google</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="reveal text-center mt-10">
+      <a href="#" class="text-teal text-sm font-medium hover:underline">Ver las 312 reseñas en Google →</a>
+    </div>
+
+  </div>
+</section>
+
+
+<!-- ════════════════════════════════════════════════
+     ⑩ FINANCIACIÓN
+════════════════════════════════════════════════ -->
+<section class="py-24 px-6 bg-stone">
+  <div class="max-w-5xl mx-auto">
+    <div class="grid md:grid-cols-2 gap-16 items-center">
+
+      <div>
+        <p class="reveal treatment-badge mb-4">Sin barreras económicas</p>
+        <h2 class="reveal reveal-delay-1 font-serif text-4xl text-charcoal mb-4">Tu salud dental no debería esperar</h2>
+        <p class="reveal reveal-delay-2 text-muted leading-relaxed mb-8">Presupuesto cerrado por escrito antes de empezar. Financiación sin intereses hasta 36 meses. Sin sorpresas.</p>
+        <div class="reveal reveal-delay-2 space-y-4">
+          <div class="flex items-start gap-4 p-4 bg-white rounded-2xl border border-warm">
+            <div class="w-10 h-10 rounded-xl bg-teal/10 flex items-center justify-center flex-shrink-0">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#0D9488" stroke-width="2"><rect x="2" y="5" width="20" height="14" rx="2"/><line x1="2" y1="10" x2="22" y2="10"/></svg>
+            </div>
+            <div>
+              <p class="font-semibold text-charcoal text-sm">Financiación 0% hasta 36 meses</p>
+              <p class="text-muted text-xs mt-0.5">Adaptamos la cuota a tu situación real.</p>
+            </div>
+          </div>
+          <div class="flex items-start gap-4 p-4 bg-white rounded-2xl border border-warm">
+            <div class="w-10 h-10 rounded-xl bg-emerald/10 flex items-center justify-center flex-shrink-0">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#059669" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+            </div>
+            <div>
+              <p class="font-semibold text-charcoal text-sm">Garantía escrita de 10 años en implantes</p>
+              <p class="text-muted text-xs mt-0.5">La tranquilidad que buscabas, en papel.</p>
+            </div>
+          </div>
+          <div class="flex items-start gap-4 p-4 bg-white rounded-2xl border border-warm">
+            <div class="w-10 h-10 rounded-xl bg-gold/10 flex items-center justify-center flex-shrink-0">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#B8975A" stroke-width="2"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg>
+            </div>
+            <div>
+              <p class="font-semibold text-charcoal text-sm">Presupuesto cerrado, sin sorpresas</p>
+              <p class="text-muted text-xs mt-0.5">Lo que acordamos es lo que pagas.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Finance calculator (visual) -->
+      <div class="reveal reveal-delay-1 bg-white rounded-3xl p-8 border border-warm shadow-sm">
+        <h3 class="font-serif text-2xl text-charcoal mb-6">Calcula tu cuota</h3>
+        <div class="mb-5">
+          <label class="block text-sm font-medium text-charcoal mb-2">Tratamiento</label>
+          <select id="calc-treatment" class="w-full border border-warm rounded-xl px-4 py-3 text-sm text-charcoal bg-ivory focus:outline-none focus:border-teal transition-colors">
+            <option value="900">Implante dental — desde 900€</option>
+            <option value="2800">Odontopediatría Libre de Trauma — desde 2.800€</option>
+            <option value="350">Carillas cerámicas — desde 350€</option>
+          </select>
+        </div>
+        <div class="mb-6">
+          <label class="block text-sm font-medium text-charcoal mb-2">Meses de financiación</label>
+          <input type="range" id="calc-months" min="6" max="36" step="6" value="12" class="w-full accent-teal" />
+          <div class="flex justify-between text-xs text-muted mt-1">
+            <span>6 meses</span>
+            <span class="text-teal font-semibold" id="months-label">12 meses</span>
+            <span>36 meses</span>
+          </div>
+        </div>
+        <div class="bg-stone rounded-2xl p-5 text-center">
+          <p class="text-xs text-muted mb-1">Tu cuota aproximada</p>
+          <p class="font-serif text-4xl text-teal"><span id="monthly-payment">75</span>€<span class="text-lg text-muted font-sans font-normal">/mes</span></p>
+          <p class="text-xs text-muted mt-2">A 0% TAE · Sin intereses · Sujeto a aprobación</p>
+        </div>
+        <a href="#reservar" class="btn-primary w-full rounded-xl py-3.5 font-semibold text-sm mt-5 text-center block">
+          Pedir mi presupuesto real →
+        </a>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- ════════════════════════════════════════════════
+     ⑪ FAQ
+════════════════════════════════════════════════ -->
+<section id="faq" class="py-24 px-6 bg-ivory">
+  <div class="max-w-3xl mx-auto">
+
+    <div class="text-center mb-14">
+      <p class="reveal treatment-badge mx-auto mb-4 w-fit">Tus dudas</p>
+      <h2 class="reveal reveal-delay-1 font-serif text-4xl text-charcoal">Preguntas frecuentes</h2>
+    </div>
+
+    <div class="space-y-3" id="faq-list">
+
+      <div class="accordion-item reveal bg-white rounded-2xl border border-warm overflow-hidden">
+        <button class="accordion-btn w-full flex items-center justify-between p-6 text-left">
+          <span class="font-semibold text-charcoal">¿Duele la colocación de implantes?</span>
+          <span class="accordion-icon text-teal text-2xl leading-none flex-shrink-0 ml-4">+</span>
+        </button>
+        <div class="accordion-content">
+          <p class="px-6 pb-6 text-muted text-sm leading-relaxed">La colocación se realiza bajo anestesia local, por lo que durante el procedimiento no se siente dolor. Ofrecemos además sedación consciente para pacientes con mayor ansiedad. Tras la intervención puede haber molestia leve durante 1-3 días, que se gestiona perfectamente con analgésicos habituales.</p>
+        </div>
+      </div>
+
+      <div class="accordion-item reveal reveal-delay-1 bg-white rounded-2xl border border-warm overflow-hidden">
+        <button class="accordion-btn w-full flex items-center justify-between p-6 text-left">
+          <span class="font-semibold text-charcoal">¿Cuánto cuesta un implante? ¿Por qué varía el precio?</span>
+          <span class="accordion-icon text-teal text-2xl leading-none flex-shrink-0 ml-4">+</span>
+        </button>
+        <div class="accordion-content">
+          <p class="px-6 pb-6 text-muted text-sm leading-relaxed">El precio depende del estado del hueso, si se necesita regeneración, la marca del implante y la corona. En la valoración te damos un presupuesto cerrado y detallado. Los implantes en Dra. Joselyn parten desde 900€ con financiación desde 49€/mes. Sin costes ocultos.</p>
+        </div>
+      </div>
+
+      <div class="accordion-item reveal reveal-delay-2 bg-white rounded-2xl border border-warm overflow-hidden">
+        <button class="accordion-btn w-full flex items-center justify-between p-6 text-left">
+          <span class="font-semibold text-charcoal">¿Cuánto dura el tratamiento de ortodoncia invisible?</span>
+          <span class="accordion-icon text-teal text-2xl leading-none flex-shrink-0 ml-4">+</span>
+        </button>
+        <div class="accordion-content">
+          <p class="px-6 pb-6 text-muted text-sm leading-relaxed">Depende de la complejidad del caso. Casos leves: 6-8 meses. Casos moderados: 12-18 meses. En la valoración el Dr. Vidal te muestra un plan digital con el resultado esperado y los tiempos estimados antes de comenzar.</p>
+        </div>
+      </div>
+
+      <div class="accordion-item reveal reveal-delay-3 bg-white rounded-2xl border border-warm overflow-hidden">
+        <button class="accordion-btn w-full flex items-center justify-between p-6 text-left">
+          <span class="font-semibold text-charcoal">¿La valoración inicial tiene algún compromiso?</span>
+          <span class="accordion-icon text-teal text-2xl leading-none flex-shrink-0 ml-4">+</span>
+        </button>
+        <div class="accordion-content">
+          <p class="px-6 pb-6 text-muted text-sm leading-relaxed">Ninguno. La valoración es una consulta informativa en la que exploramos tu boca, te explicamos las opciones y te entregamos un presupuesto claro. Tú decides si quieres continuar o no. Sin presión.</p>
+        </div>
+      </div>
+
+      <div class="accordion-item reveal reveal-delay-4 bg-white rounded-2xl border border-warm overflow-hidden">
+        <button class="accordion-btn w-full flex items-center justify-between p-6 text-left">
+          <span class="font-semibold text-charcoal">¿Qué pasa si tengo mucho miedo al dentista?</span>
+          <span class="accordion-icon text-teal text-2xl leading-none flex-shrink-0 ml-4">+</span>
+        </button>
+        <div class="accordion-content">
+          <p class="px-6 pb-6 text-muted text-sm leading-relaxed">Es más común de lo que crees. Tenemos protocolo específico para pacientes con ansiedad: explicamos cada paso antes de hacerlo, ofrecemos sedación consciente y adaptamos el ritmo a tu comodidad. Cuéntanos tu preocupación al reservar y lo tendremos en cuenta desde el primer momento.</p>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="reveal reveal-delay-4 text-center mt-10">
+      <p class="text-muted text-sm">¿Tienes más dudas?</p>
+      <a href="https://wa.me/529612333457?text=Hola%2C%20tengo%20una%20pregunta%20sobre%20un%20tratamiento."
+         class="inline-flex items-center gap-2 mt-3 text-teal font-semibold text-sm hover:underline">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M11.998 2C6.479 2 2 6.479 2 12.001c0 1.762.459 3.414 1.264 4.853L2 22l5.306-1.254A9.954 9.954 0 0011.998 22C17.521 22 22 17.521 22 12c0-5.522-4.479-10-10.002-10zm0 18.178a8.172 8.172 0 01-4.163-1.136l-.298-.178-3.096.732.78-3.014-.195-.309A8.147 8.147 0 013.822 12c0-4.508 3.668-8.178 8.176-8.178 4.508 0 8.178 3.67 8.178 8.178 0 4.509-3.67 8.178-8.178 8.178z"/></svg>
+        Escríbenos por WhatsApp
+      </a>
+    </div>
+
+  </div>
+</section>
+
+<!-- Schema FAQ -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {"@type":"Question","name":"¿Duele la colocación de implantes?","acceptedAnswer":{"@type":"Answer","text":"La colocación se realiza bajo anestesia local. Ofrecemos sedación consciente para pacientes con mayor ansiedad."}},
+    {"@type":"Question","name":"¿La valoración inicial tiene algún compromiso?","acceptedAnswer":{"@type":"Answer","text":"Ninguno. Es una consulta informativa. Tú decides si quieres continuar o no."}}
+  ]
+}
+</script>
+
+
+<!-- ════════════════════════════════════════════════
+     ⑫ CTA FINAL + CALENDARIO GHL
+════════════════════════════════════════════════ -->
+<section id="reservar" class="py-24 px-6 bg-stone">
+  <div class="max-w-4xl mx-auto text-center">
+
+    <p class="reveal treatment-badge mx-auto mb-6 w-fit">Empieza hoy</p>
+    <h2 class="reveal reveal-delay-1 font-serif text-5xl text-charcoal mb-4">Tu nueva sonrisa<br/>empieza con una valoración</h2>
+    <p class="reveal reveal-delay-2 text-muted text-lg mb-12">Sin compromiso · Con diagnóstico · Con presupuesto claro</p>
+
+    <!-- GHL Calendar placeholder -->
+    <div class="reveal reveal-delay-2 ghl-placeholder max-w-2xl mx-auto mb-8">
+      <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="#C8C0B6" stroke-width="1.5" class="mx-auto mb-4"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+      <p class="text-sm font-semibold mb-1">Widget de citas GoHighLevel</p>
+      <p class="text-xs">El calendario de reservas de GHL irá aquí.</p>
+      <p class="text-xs mt-1">Configurar con el ID del widget en GHL settings.</p>
+      <code class="text-xs bg-warm/50 px-3 py-1 rounded-lg mt-3 inline-block">data-widget-id="__GHL_WIDGET_ID__"</code>
+    </div>
+
+    <!-- Alternative CTAs -->
+    <div class="reveal reveal-delay-3 flex flex-col sm:flex-row gap-4 justify-center items-center">
+      <a href="tel:+529612333457" class="btn-primary rounded-full px-8 py-4 font-semibold text-base flex items-center gap-2">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.18a2 2 0 0 1 2-2h3A2 2 0 0 1 8.6 3c.16.87.36 1.73.63 2.57a2 2 0 0 1-.45 2.11L7.91 8.6a16 16 0 0 0 6.29 6.29l1.27-.75a2 2 0 0 1 2.11-.45c.84.27 1.7.47 2.57.63a2 2 0 0 1 1.77 2z"/></svg>
+        Llamar ahora
+      </a>
+      <a href="https://wa.me/529612333457?text=Hola%2C%20me%20gustar%C3%ADa%20reservar%20una%20valoraci%C3%B3n."
+         class="btn-outline rounded-full px-8 py-4 font-semibold text-base flex items-center gap-2">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M11.998 2C6.479 2 2 6.479 2 12.001c0 1.762.459 3.414 1.264 4.853L2 22l5.306-1.254A9.954 9.954 0 0011.998 22C17.521 22 22 17.521 22 12c0-5.522-4.479-10-10.002-10zm0 18.178a8.172 8.172 0 01-4.163-1.136l-.298-.178-3.096.732.78-3.014-.195-.309A8.147 8.147 0 013.822 12c0-4.508 3.668-8.178 8.176-8.178 4.508 0 8.178 3.67 8.178 8.178 0 4.509-3.67 8.178-8.178 8.178z"/></svg>
+        WhatsApp
+      </a>
+    </div>
+    <p class="reveal reveal-delay-4 text-xs text-muted mt-6">🔒 Tus datos están protegidos. Cumplimiento RGPD.</p>
+
+  </div>
+</section>
+
+
+<!-- ════════════════════════════════════════════════
+     ⑬ FOOTER SEO LOCAL
+════════════════════════════════════════════════ -->
+<footer class="bg-charcoal pt-16 pb-8 px-6">
+  <div class="max-w-6xl mx-auto">
+
+    <div class="grid md:grid-cols-4 gap-10 mb-12">
+
+      <!-- Brand -->
+      <div class="md:col-span-2">
+        <div class="flex items-center gap-2 mb-4">
+          <div class="w-8 h-8 rounded-full bg-teal flex items-center justify-center">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.5" stroke-linecap="round"><path d="M12 2C8 2 5 5.5 5 9c0 2.5 1 4.5 2.5 6L12 22l4.5-7C18 13.5 19 11.5 19 9c0-3.5-3-7-7-7z"/></svg>
+          </div>
+          <span class="font-serif text-xl text-white">Dra. Joselyn<span class="text-teal">.</span></span>
+        </div>
+        <p class="text-white/40 text-sm leading-relaxed max-w-xs">Clínica dental especializada en implantología, ortodoncia invisible y estética dental. Tuxtla Gutiérrez, Chiapas.</p>
+        <div class="mt-6 space-y-2 text-sm text-white/50">
+          <p>📍 Calle Dra. Joselyn 24, 28001 Tuxtla Gutiérrez, Chiapas</p>
+          <p>📞 <a href="tel:+529612333457" class="hover:text-teal transition-colors">91 000 0000</a></p>
+          <p>🕐 Lun–Vie 9:00–20:00 · Sáb 9:00–14:00</p>
+        </div>
+      </div>
+
+      <!-- Treatments -->
+      <div>
+        <p class="text-white/70 font-semibold text-sm mb-4 uppercase tracking-wider">Tratamientos</p>
+        <ul class="space-y-2 text-sm text-white/40">
+          <li><a href="#tratamientos" class="hover:text-teal transition-colors">Ortopedia Dental Temprana</a></li>
+          <li><a href="#tratamientos" class="hover:text-teal transition-colors">Odontopediatría Libre de Trauma</a></li>
+          <li><a href="#tratamientos" class="hover:text-teal transition-colors">Estética dental</a></li>
+          <li><a href="#tratamientos" class="hover:text-teal transition-colors">Odontopediatría</a></li>
+        </ul>
+      </div>
+
+      <!-- Clínica -->
+      <div>
+        <p class="text-white/70 font-semibold text-sm mb-4 uppercase tracking-wider">Clínica</p>
+        <ul class="space-y-2 text-sm text-white/40">
+          <li><a href="#equipo" class="hover:text-teal transition-colors">Nuestro equipo</a></li>
+          <li><a href="#resultados" class="hover:text-teal transition-colors">Resultados</a></li>
+          <li><a href="#faq" class="hover:text-teal transition-colors">Preguntas frecuentes</a></li>
+          <li><a href="#reservar" class="hover:text-teal transition-colors">Reservar valoración</a></li>
+        </ul>
+        <div class="mt-6">
+          <a href="#reservar" class="btn-primary rounded-full px-5 py-2.5 text-sm font-semibold inline-block">
+            Reservar ahora
+          </a>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="section-divider mb-8 opacity-20"></div>
+
+    <div class="flex flex-col md:flex-row items-center justify-between gap-4 text-xs text-white/30">
+      <p>© 2026 Dra. Johanna Joselyn Vázquez Hernández · Nº Col. 28-12345 · Reg. Sanitario 28-CM-01234</p>
+      <div class="flex gap-6">
+        <a href="#" class="hover:text-teal transition-colors">Aviso legal</a>
+        <a href="#" class="hover:text-teal transition-colors">Privacidad</a>
+        <a href="#" class="hover:text-teal transition-colors">Cookies</a>
+      </div>
+    </div>
+
+  </div>
+</footer>
+
+
+<!-- ════════════════════════════════════════════════
+     BARRA FIJA MÓVIL
+════════════════════════════════════════════════ -->
+<div id="mobile-bar" class="fixed bottom-0 left-0 right-0 z-50 bg-charcoal/95 backdrop-blur-sm border-t border-white/10 py-3 px-6 gap-3">
+  <a href="tel:+529612333457" class="flex-1 flex items-center justify-center gap-2 py-2.5 rounded-xl border border-white/20 text-white text-sm font-semibold">
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.18a2 2 0 0 1 2-2h3A2 2 0 0 1 8.6 3c.16.87.36 1.73.63 2.57a2 2 0 0 1-.45 2.11L7.91 8.6a16 16 0 0 0 6.29 6.29l1.27-.75a2 2 0 0 1 2.11-.45c.84.27 1.7.47 2.57.63a2 2 0 0 1 1.77 2z"/></svg>
+    Llamar
+  </a>
+  <a href="#reservar" class="flex-1 flex items-center justify-center gap-2 py-2.5 rounded-xl bg-emerald text-white text-sm font-semibold">
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+    Reservar
+  </a>
+</div>
+
+
+<!-- ════════════════════════════════════════════════
+     JAVASCRIPT
+════════════════════════════════════════════════ -->
+<script>
+  // ── Header glass on scroll ──────────────────────
+  const header = document.getElementById('site-header');
+  window.addEventListener('scroll', () => {
+    header.classList.toggle('scrolled', window.scrollY > 40);
+  }, { passive: true });
+
+  // ── Mobile menu toggle ──────────────────────────
+  document.getElementById('menu-btn').addEventListener('click', () => {
+    document.getElementById('mobile-nav').classList.toggle('hidden');
+  });
+
+  // ── Scroll reveal ───────────────────────────────
+  const revealObserver = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); revealObserver.unobserve(e.target); } });
+  }, { threshold: 0.12 });
+  document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
+
+  // ── Counter animation ───────────────────────────
+  function animateCounter(el) {
+    const target = parseInt(el.dataset.target, 10);
+    const duration = 1200;
+    const step = target / (duration / 16);
+    let current = 0;
+    const timer = setInterval(() => {
+      current = Math.min(current + step, target);
+      el.textContent = Math.floor(current).toLocaleString('es-ES');
+      if (current >= target) clearInterval(timer);
+    }, 16);
+  }
+  const counterObserver = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if (e.isIntersecting) { animateCounter(e.target); counterObserver.unobserve(e.target); } });
+  }, { threshold: 0.5 });
+  document.querySelectorAll('.counter-num').forEach(el => counterObserver.observe(el));
+
+  // ── Before / After Slider ───────────────────────
+  (function() {
+    const slider = document.getElementById('ba-slider');
+    const after = slider.querySelector('.ba-after');
+    const handle = document.getElementById('ba-handle');
+    let dragging = false;
+
+    function setPosition(x) {
+      const rect = slider.getBoundingClientRect();
+      let pct = Math.max(0, Math.min(1, (x - rect.left) / rect.width));
+      after.style.width = (pct * 100) + '%';
+      handle.style.left = (pct * 100) + '%';
+      const img = after.querySelector('img');
+      if (img) img.style.minWidth = rect.width + 'px';
+    }
+
+    slider.addEventListener('mousedown', e => { dragging = true; setPosition(e.clientX); });
+    window.addEventListener('mousemove', e => { if (dragging) setPosition(e.clientX); });
+    window.addEventListener('mouseup', () => { dragging = false; });
+    slider.addEventListener('touchstart', e => { dragging = true; setPosition(e.touches[0].clientX); }, { passive: true });
+    window.addEventListener('touchmove', e => { if (dragging) setPosition(e.touches[0].clientX); }, { passive: true });
+    window.addEventListener('touchend', () => { dragging = false; });
+  })();
+
+  // ── FAQ Accordion ───────────────────────────────
+  document.querySelectorAll('.accordion-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const item = btn.closest('.accordion-item');
+      const content = item.querySelector('.accordion-content');
+      const isOpen = item.classList.contains('open');
+      document.querySelectorAll('.accordion-item').forEach(i => {
+        i.classList.remove('open');
+        i.querySelector('.accordion-content').classList.remove('open');
+      });
+      if (!isOpen) { item.classList.add('open'); content.classList.add('open'); }
+    });
+  });
+
+  // ── Finance Calculator ──────────────────────────
+  const treatmentSelect = document.getElementById('calc-treatment');
+  const monthsInput = document.getElementById('calc-months');
+  const monthsLabel = document.getElementById('months-label');
+  const paymentEl = document.getElementById('monthly-payment');
+
+  function calcPayment() {
+    const amount = parseInt(treatmentSelect.value, 10);
+    const months = parseInt(monthsInput.value, 10);
+    monthsLabel.textContent = months + ' meses';
+    paymentEl.textContent = Math.ceil(amount / months);
+  }
+  treatmentSelect.addEventListener('change', calcPayment);
+  monthsInput.addEventListener('input', calcPayment);
+  calcPayment();
+
+  // ── Case tabs ───────────────────────────────────
+  document.querySelectorAll('.case-tab').forEach(tab => {
+    tab.addEventListener('click', () => {
+      document.querySelectorAll('.case-tab').forEach(t => t.classList.remove('border-teal', 'bg-teal/5'));
+      tab.classList.add('border-teal', 'bg-teal/5');
+    });
+  });
+  document.querySelector('.case-tab').classList.add('border-teal', 'bg-teal/5');
+</script>
+
+</body>
+</html>
